@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 	<meta name="google-site-verification" content="9YR5HZGqoSr5yUFPpA5uY4FOPvgbUPaP_WLtxF1mYW4" />
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE-edge">
@@ -12,6 +12,7 @@
     <link rel ="icon" href="images/icon.png" type="image/png">
 </head>
 <body>
+<div id="view-home" class="view">
 <div id="header">
     <div class="container">
         <nav>
@@ -106,7 +107,7 @@
 				<div class="layer">
 					<h3>Notable Projects from 42 Cursus</h3>
 					<p>These are some projects given to me in the 42 curriculum where I believe I did an impressive job!</p>
-					<a href="42Projects/index.html"><i class="fa-solid fa-arrow-up-right-from-square" style="color: #3d09d7;"></i></a>
+					<a href="javascript:void(0)" onclick="navigateTo('projects')"><i class="fa-solid fa-arrow-up-right-from-square" style="color: #3d09d7;"></i></a>
 				</div>
 			</div>
 			<div class="work">
@@ -114,7 +115,7 @@
 				<div class="layer">
 					<h3>Hackathons</h3>
 					<p>Hackathon stuff! (finish this)</p>
-					<a href="https://github.com/ahaarij?tab=repositories" target="_blank"><i class="fa-brands fa-github" style="color: #3d09d7;"></i></a>
+					<a href="javascript:void(0)" onclick="navigateTo('hackathons')"><i class="fa-brands fa-github" style="color: #3d09d7;"></i></a>
 				</div>
 			</div>
 		</div>
@@ -157,7 +158,161 @@
 		<p>Copyright © Aarij <i class="fa-solid fa-heart"></i></p>
 	</div>
 </div>
+</div> <!-- End of view-home -->
 
+<!-- View: Projects -->
+<div id="view-projects" class="view" style="display: none;">
+    <div id="header">
+        <div class="container">
+            <nav>
+                <a onclick="navigateTo('home')" class="back-btn"><i class="fa-solid fa-arrow-left"></i> Back to Home </a>
+            </nav>
+            <div class="header-text">
+                <h1>42 Abu Dhabi <span>Projects</span></h1>
+                <h2>These are some of the most rewarding low-level projects I've completed at 42 Abu Dhabi. Built entirely in C from scratch.</h2>
+            </div>
+        </div>
+    </div>
+
+    <div id="projects-content">
+        <div class="container">
+
+            <div class="project">
+                <h2>MiniRT</h2>
+                <p>A ray tracer written in C using the MinilibX graphics library. It renders 3D scenes in real time with realistic lighting, shadows, and texture bump mapping. Users can move the camera using keyboard input and configure environments via custom scene files.</p>
+                <div class="minirt-img-row">
+                    <div class= "minirt-img-1">
+                        <img src="images/minirt_scene.png" alt="Basic MiniRT Scene"/>
+                        <div class="minirt-label">Basic MiniRT Scene</div>
+                    </div>
+                    <div class = "minirt-img-2">
+                        <img src="images/minirt_demo.gif" alt="MiniRT Demo"/>
+                        <div class="minirt-label">MiniRT Demo</div>
+                    </div>
+                    <div class = "minirt-img-3">
+                        <img src="images/minirt_compare.png" alt="MiniRT Texture Comparison"/>
+                        <div class="minirt-label">Normal Texture vs Bump Mapped Texture</div>
+                    </div>
+                </div>
+                <div class="repo-btn-wrapper">
+                    <a href="https://github.com/ahaarij/miniRT" class="repo-btn" target="_blank">See Repository</a>
+                </div>
+            </div>
+
+            <div class="project">
+                <h2>Minishell</h2>
+                <p>A minimal Bash-like shell built in C, supporting pipes, heredocs, file redirection, and runtime command history. It includes built-in commands, variable handling, and a custom parser using a priority queue.</p>
+                <div class="minishell-img-row">
+                    <div class= "minishell-img-1">
+                        <img src="images/minishell_output.png" alt="Minishell Output"/>
+                        <div class="minishell-label">Minishell Output</div>
+                    </div>
+                    <div class = "minishell-img-2">
+                        <img src="images/minishell_diagram.png" alt="Minishell Core Concept"/>
+                        <div class="minishell-label">Minishell's Core Concept</div>
+                    </div>
+                    <div class = "minishell-img-3">
+                        <img src="images/minishell_code.png" alt="Minishell Code"/>
+                        <div class="minishell-label">Execution Code Snippet</div>
+                    </div>
+                </div>
+                <div class="repo-btn-wrapper">
+                    <a href="https://github.com/ahaarij/minishell" class="repo-btn" target="_blank">See Repository</a>
+                </div>
+            </div>
+
+            <div class="project">
+                <h2>Push Swap</h2>
+                <p>A stack-based sorting algorithm written in C. It uses radix sort to efficiently organize numbers with a limited set of operations, focusing on performance and algorithmic optimization.</p>
+                <div class="pushswap-img-row">
+                    <div class= "pushswap-img-1">
+                        <img src="images/before&after.png" alt="Before and After"/>
+                        <div class="pushswap-label">Before & After</div>
+                    </div>
+                    <div class = "pushswap-img-2">
+                        <img src="images/sorting.gif" alt="Sorting Animation"/>
+                        <div class="pushswap-label">Sorting Animation</div>
+                    </div>
+                    <div class = "pushswap-img-3">
+                        <img src="images/graph.png" alt="Graph"/>
+                        <div class="pushswap-label">Performance Graph</div>
+                    </div>
+                </div>
+                <div class="repo-btn-wrapper">
+                    <a href="https://github.com/ahaarij/push_swap" class="repo-btn" target="_blank">See Repository</a>
+                </div>
+            </div>
+
+        </div>
+    </div>
+    
+    <div id="contact">
+        <div class="copyright">
+            <p>Copyright © Aarij <i class="fa-solid fa-heart"></i></p>
+        </div>
+    </div>
+</div>
+
+<!-- View: Hackathons -->
+<div id="view-hackathons" class="view" style="display: none;">
+    <div id="header">
+        <div class="container">
+            <nav>
+                <a onclick="navigateTo('home')" class="back-btn"><i class="fa-solid fa-arrow-left"></i> Back to Home </a>
+            </nav>
+            <div class="header-text">
+                <h1>Hackathons</h1>
+                <h2>Coming soon...</h2>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    function navigateTo(viewId, updateHistory = true) {
+        const sectionMap = {
+            'header': 'home',
+            'about': 'home',
+            'portfolio': 'home',
+            'contact': 'home'
+        };
+
+        const targetViewId = sectionMap[viewId] || viewId;
+        
+        document.querySelectorAll('.view').forEach(view => {
+            view.style.display = 'none';
+        });
+        
+        const targetView = document.getElementById('view-' + targetViewId);
+        if (targetView) {
+            targetView.style.display = 'block';
+            
+            if (sectionMap[viewId]) {
+                const section = document.getElementById(viewId);
+                if (section) {
+                    section.scrollIntoView({ behavior: 'smooth' });
+                }
+            } else {
+                window.scrollTo(0, 0);
+            }
+            
+            // Update URL hash
+            if (updateHistory) {
+                history.pushState(null, null, '#' + viewId);
+            }
+        }
+    }
+
+    window.addEventListener('popstate', () => {
+        const hash = window.location.hash.replace('#', '') || 'home';
+        navigateTo(hash, false);
+    });
+
+    window.addEventListener('DOMContentLoaded', () => {
+        const hash = window.location.hash.replace('#', '') || 'home';
+        navigateTo(hash, false);
+    });
+</script>
 
 
 <!-- ---------script--------- -->
@@ -218,6 +373,8 @@
 		.catch(error => console.error('Error!', error.message))
 	})
 </script>
+
+<script src="secret.js"></script>
 
 </body>
 </html>
