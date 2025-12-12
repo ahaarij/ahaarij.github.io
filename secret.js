@@ -47,6 +47,8 @@
         if (Math.random() < 0.000001) console.log(NOISE[Math.floor(Math.random() * NOISE.length)]);
 
         if (match) {
+            buffer = [];
+
             const d = document.createElement('div');
             Object.assign(d.style, {
                 position: 'fixed',
@@ -54,25 +56,54 @@
                 zIndex: '999999999',
                 background: 'rgba(0,0,0,0.95)',
                 display: 'flex',
+                flexDirection: 'column',
                 justifyContent: 'center',
                 alignItems: 'center',
                 backdropFilter: 'blur(10px)',
                 transition: 'opacity 0.5s'
             });
-            d.innerHTML =
-                `<h1 style="font-family:'Orbitron';
-                             color:#ff00ff;
-                             font-size:5rem;
-                             text-shadow:0 0 20px #ff00ff;
-                             animation:pulse 2s infinite">
-                    ${finalMessage}
-                 </h1>`;
-
+            
+            d.innerHTML = `
+                <h1 style="font-family:'Orbitron', sans-serif; color:#ff00ff; font-size:3rem; text-shadow:0 0 20px #ff00ff; margin-bottom: 20px;">
+                    ACCESS GRANTED
+                </h1>
+                <div id="secret-loader" style="color: #0f0; font-family: monospace;">Decrypting payload...</div>
+            `;
             document.body.appendChild(d);
-            setTimeout(() => {
-                d.style.opacity = '0';
-                setTimeout(() => d.remove(), 500);
-            }, 5000);
+
+            fetch('images/data.txt')
+                .then(res => {
+                    if (!res.ok) throw new Error("Payload missing");
+                    return res.json();
+                })
+                .then(encryptedData => {
+                    
+                    const decryptedChars = encryptedData.map((v, i) => {
+                        const k1 = realKey[i % realKey.length];
+                        const k2 = (i * 17) % 256;
+                        const k3 = realKey[(i + 3) % realKey.length] >> 1;
+                        return String.fromCharCode(v ^ k1 ^ k2 ^ k3);
+                    });
+                    
+                    const base64Image = decryptedChars.join('');
+                    
+                    d.innerHTML = `
+                        <img src="${base64Image}" style="max-width: 80vw; max-height: 70vh; border: 2px solid #ff00ff; box-shadow: 0 0 30px #ff00ff; border-radius: 10px; margin-bottom: 20px;">
+                        <h1 style="font-family:'Orbitron', sans-serif; color:#ff00ff; font-size:3rem; text-shadow:0 0 20px #ff00ff;">
+                            ${finalMessage}
+                        </h1>
+                    `;
+                    
+                    setTimeout(() => {
+                        d.style.opacity = '0';
+                        setTimeout(() => d.remove(), 500);
+                    }, 5000);
+                })
+                .catch(err => {
+                    console.error(err);
+                    d.innerHTML += `<div style="color:red; margin-top:10px;">Error: Image payload not found.</div>`;
+                    setTimeout(() => d.remove(), 3000);
+                });
         }
     });
 })();
