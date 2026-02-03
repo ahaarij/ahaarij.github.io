@@ -1,380 +1,616 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-	<meta name="google-site-verification" content="9YR5HZGqoSr5yUFPpA5uY4FOPvgbUPaP_WLtxF1mYW4" />
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE-edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ahmed Aarij's Portfolio</title>
-	<meta name="description" content="Ahmed Aarij's personal portfolio – explore top software projects from 42 Abu Dhabi including a real-time ray tracer, custom shell, and stack sorting algorithm.">
-    <link rel ="stylesheet" href="style.css">
-    <link rel ="icon" href="images/icon.png" type="image/png">
-</head>
-<body>
-<div id="view-home" class="view">
-<div id="header">
-    <div class="container">
-        <nav>
-            <img src="images/logo.png" class="logo">
-            <ul id="sidemenu">
-                <li><a href="#header">Home</a></li>
-                <li><a href="#about">About</a></li>
-                <li><a href="#portfolio">Portfolio</a></li>
-                <li><a href="#contact">Contact</a></li>
-				<i class="fas fa-times" onclick="closemenu()"></i>
-            </ul>
-			<i class="fas fa-bars" onclick="openmenu()"></i>
-        </nav>
-        <div class="header-text">
-            <p>Software Developer</p>
-            <h1>Hi, I'm <span>Ahmed</span> <br><span>Aarij</span> From Dubai</h1>
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta name="google-site-verification" content="9YR5HZGqoSr5yUFPpA5uY4FOPvgbUPaP_WLtxF1mYW4" />
+
+        <title>Ahmed Aarij — Software Developer</title>
+        <meta
+            name="description"
+            content="Ahmed Aarij — software developer in Dubai. Explore standout projects from 42 Abu Dhabi (ray tracer, custom shell, algorithms), game jams, and more."
+        />
+
+        <meta property="og:title" content="Ahmed Aarij — Software Developer" />
+        <meta
+            property="og:description"
+            content="Low-level systems, graphics, and clean web experiences. Projects, skills, and contact."
+        />
+        <meta property="og:type" content="website" />
+
+        <link rel="icon" href="images/icon.png" type="image/png" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Inter:wght@300..900&family=Sora:wght@300..800&family=Orbitron:wght@400..900&display=swap"
+            rel="stylesheet"
+        />
+
+        <link rel="stylesheet" href="style.css" />
+    </head>
+
+    <body>
+        <div class="bg" aria-hidden="true">
         </div>
-    </div>
-</div>
 
+        <header class="site-header" id="top">
+            <div class="container header__inner">
+                <a class="brand" href="#header" onclick="navigateTo('header')" aria-label="Go to home">
+                    <img src="images/logo.png" class="brand__logo" alt="Aarij logo" />
+                    <span class="brand__text">Ahmed Aarij</span>
+                </a>
 
+                <nav class="nav" aria-label="Primary">
+                    <button class="nav__toggle" type="button" aria-expanded="false" aria-controls="sidemenu">
+                        <span class="nav__toggleIcon"><i class="fa-solid fa-bars"></i></span>
+                        <span class="sr-only">Menu</span>
+                    </button>
 
-<!-- ---------about--------- -->
-
-
-
-<div id="about">
-    <div class="container">
-        <div class="row">
-            <div class="about-col-1">
-                <img src="images/user.JPG">
+                    <ul id="sidemenu" class="nav__list" aria-hidden="true">
+                        <li><a data-nav href="#about" onclick="navigateTo('about')">About</a></li>
+                        <li><a data-nav href="#portfolio" onclick="navigateTo('portfolio')">Work</a></li>
+                        <li><a data-view="projects" href="#projects">42 Projects</a></li>
+                        <li><a data-nav href="#contact" onclick="navigateTo('contact')">Contact</a></li>
+                        <li class="nav__divider"></li>
+                        <li>
+                            <a class="nav__pill" href="Ahmed%20Aarij%20CV-1.pdf" download>
+                                <i class="fa-solid fa-download"></i> Resume
+                            </a>
+                        </li>
+                        <li>
+                            <button class="nav__close" type="button" onclick="closemenu()" aria-label="Close menu">
+                                <i class="fa-solid fa-xmark"></i>
+                            </button>
+                        </li>
+                    </ul>
+                </nav>
             </div>
-            <div class="about-col-2">
-                <h1 class="sub-title">About Me</h1>
-                <p>
-                    A dynamic and result-oriented software developer with a passion for innovation.
-                    Strong Project manager, Skilled multi-tasker, and effective at leveraging an
-                    extensive technology and customer relations background to creatively solve
-                    problems and ensure an exceptional client experience. Adept at creating robust
-                    software solutions. Quick learner, collaborative team player and detail oriented.</p>  
-                    
-                    <div class="tab-titles">
-                        <p class="tab-links active-link" onclick="opentab('skills')">Skills</p>
-                        <p class="tab-links" onclick="opentab('experience')">Experience</p>
-                        <p class="tab-links" onclick="opentab('education')">Education</p>
+        </header>
+
+        <!-- View: Home -->
+        <main id="view-home" class="view" aria-hidden="false">
+            <section id="header" class="hero">
+                <div class="container hero__inner">
+                    <div class="hero__left" data-reveal>
+                        <div class="kicker">
+                            <span class="kicker__dot"></span>
+                            <span>Software Developer · 42 Abu Dhabi · Abu Dhabi, UAE</span>
+                        </div>
+                        <h1 class="hero__title">
+                            Hi, I’m Ahmed.
+                            <span class="hero__titleBreak">I build <span class="text-gradient">reliable software</span>.</span>
+                        </h1>
+                        <p class="hero__subtitle">
+                            42 Abu Dhabi–trained in systems, graphics, and networking. I also ship real web builds for clients and game
+                            jams — fast, clean, and maintainable.
+                        </p>
+                        <p class="hero__tagline">Systems • Graphics • Full‑stack • DevOps</p>
+
+                        <div class="hero__cta">
+                            <a class="btn btn--primary" href="#contact" onclick="navigateTo('contact')">
+                                Let’s work together
+                            </a>
+                            <a class="btn btn--ghost" href="https://www.github.com/ahaarij" target="_blank" rel="noreferrer">
+                                <i class="fa-brands fa-github"></i> GitHub
+                            </a>
+                        </div>
+
+                        <div class="hero__chips">
+                            <span class="chip"><i class="fa-solid fa-code"></i> C / C++ / Python</span>
+                            <span class="chip"><i class="fa-solid fa-cube"></i> Graphics</span>
+                            <span class="chip"><i class="fa-solid fa-terminal"></i> Systems</span>
+                            <span class="chip"><i class="fa-solid fa-network-wired"></i> Networking</span>
+                        </div>
                     </div>
-                    <div class="tab-contents active-tab" id="skills">
-                        <ul>
-                            <li><span>Software Development</span><br>Proficient in C, C++, and Python</li>
-                            <li><span>Web Development</span><br>Skilled in HTML, CSS and Javascript</li>
-                            <li><span>App Development</span><br>Adept at Java, Ruby, and Javascript</li>
-                        </ul>
-					</div>
-                    <div class="tab-contents" id="experience">
-                        <ul>
-                            <li><span>2024 February</span><br>Won best Visuals at Endless Studios GameJam 2024</li>
-                            <li><span>2023</span><br>Event Host representing Mental LTD for Dubai Police at WorldSkills Asia 2023</li>
-                        </ul>
-					</div>
-                    <div class="tab-contents" id="education">
-                        <ul>
-                            <li><span>2023 - Current</span><br>Software Development at 42 Abu Dhabi</li>
-                            <li><span>2022</span><br>High School Major in Marketing, Entrepreneurship & Media</li>
-                        </ul>
-                    </div>
-            </div>
-        </div>
-    </div>
-</div>
 
+                    <div class="hero__right" data-reveal>
+                        <div class="portraitCard">
+                            <div class="portraitCard__frame">
+                                <img src="images/user.JPG" alt="Portrait of Ahmed Aarij" />
+                            </div>
+                            <div class="portraitCard__meta">
+                                <div class="portraitCard__name">Ahmed Aarij</div>
+                                <div class="portraitCard__role">Software Developer</div>
+                            </div>
+                        </div>
 
-
-<!-- ---------portfolio--------- -->
-
-
-
-<div id="portfolio">
-	<div class="container">
-		<h1 class = "sub-title">My Work</h1>
-		<div class="work-list">
-			<div class="work">
-				<img src="images/work-1.png">
-				<div class="layer">
-					<h3>Best Visuals - Endless Studios Gamejam 2024</h3>
-					<p>This game was created in 2 days with a group of 5 people in total consisting of
-						2 Art Designers, 1 Game Designer, and 2 Game Programmers!</p>
-					<a href="https://mr-galt.itch.io/deep-descent" target="_blank"><i class="fa-solid fa-arrow-up-right-from-square" style="color: #3d09d7;"></i></a>
-				</div>
-			</div>
-			<div class="work">
-				<img src="images/work-2.png">
-				<div class="layer">
-					<h3>Notable Projects from 42 Cursus</h3>
-					<p>These are some projects given to me in the 42 curriculum where I believe I did an impressive job!</p>
-					<a href="javascript:void(0)" onclick="navigateTo('projects')"><i class="fa-solid fa-arrow-up-right-from-square" style="color: #3d09d7;"></i></a>
-				</div>
-			</div>
-			<div class="work">
-				<img src="images/work-3.png">
-				<div class="layer">
-					<h3>Hackathons</h3>
-					<p>Hackathon stuff! (finish this)</p>
-					<a href="javascript:void(0)" onclick="navigateTo('hackathons')"><i class="fa-brands fa-github" style="color: #3d09d7;"></i></a>
-				</div>
-			</div>
-		</div>
-		<a href="https://www.github.com/ahaarij" target="_blank" class ="btn">See more</a>
-	</div>
-</div>
-
-
-
-<!-- ---------contact--------- -->
-
-
-
-<div id="contact">
-	<div class="container">
-		<div class="row">
-			<div class="contact-left">
-				<h1 class="sub-title">Contact Me!</h1>
-				<p><i class="fa-solid fa-envelope"></i>    ahmedaarij05@gmail.com</p>
-				<p><i class="fa-solid fa-phone"></i>    +971503880691</p>
-				<div class="social-icons">
-					<a href="https://www.instagram.com/aarij.xo" target="_blank"><i class="fa-brands fa-instagram"></i></a>
-					<a href="https://www.github.com/ahaarij" target="_blank"><i class="fa-brands fa-github"></i></a>
-					<a href="https://discord.com/users/:241854792375205889" target="_blank"><i class="fa-brands fa-discord"></i></a>
-				</div>
-				<a href="images/Ahmed Aarij Résumé.pdf" download class="btn btn2">Download my CV!</a>
-			</div>
-			<div class="contact-right">
-			<form name="submit-to-google-sheet">
-				<input type="text" name="Name" placeholder="Your Name" required>
-				<input type="text" name="Email" placeholder="Your Email" required>
-				<textarea name="Message" rows="6" placeholder="Your Message"></textarea>
-				<button type="submit" class="btn btn2">Submit</button>
-			</form>
-			<span id="msg"></span>
-			</div>
-		</div>
-	</div>
-	<div class="copyright">
-		<p>Copyright © Aarij <i class="fa-solid fa-heart"></i></p>
-	</div>
-</div>
-</div> <!-- End of view-home -->
-
-<!-- View: Projects -->
-<div id="view-projects" class="view" style="display: none;">
-    <div id="header">
-        <div class="container">
-            <nav>
-                <a onclick="navigateTo('home')" class="back-btn"><i class="fa-solid fa-arrow-left"></i> Back to Home </a>
-            </nav>
-            <div class="header-text">
-                <h1>42 Abu Dhabi <span>Projects</span></h1>
-                <h2>These are some of the most rewarding low-level projects I've completed at 42 Abu Dhabi. Built entirely in C from scratch.</h2>
-            </div>
-        </div>
-    </div>
-
-    <div id="projects-content">
-        <div class="container">
-
-            <div class="project">
-                <h2>MiniRT</h2>
-                <p>A ray tracer written in C using the MinilibX graphics library. It renders 3D scenes in real time with realistic lighting, shadows, and texture bump mapping. Users can move the camera using keyboard input and configure environments via custom scene files.</p>
-                <div class="minirt-img-row">
-                    <div class= "minirt-img-1">
-                        <img src="images/minirt_scene.png" alt="Basic MiniRT Scene"/>
-                        <div class="minirt-label">Basic MiniRT Scene</div>
-                    </div>
-                    <div class = "minirt-img-2">
-                        <img src="images/minirt_demo.gif" alt="MiniRT Demo"/>
-                        <div class="minirt-label">MiniRT Demo</div>
-                    </div>
-                    <div class = "minirt-img-3">
-                        <img src="images/minirt_compare.png" alt="MiniRT Texture Comparison"/>
-                        <div class="minirt-label">Normal Texture vs Bump Mapped Texture</div>
+                        <div class="terminal" aria-label="Mini terminal">
+                            <div class="terminal__bar">
+                                <span class="dot dot--red"></span>
+                                <span class="dot dot--yellow"></span>
+                                <span class="dot dot--green"></span>
+                                <span class="terminal__title">recruiter-preview</span>
+                            </div>
+                            <div id="mini-terminal" class="terminal__body">
+                                <div class="terminal__hint">(This section animates — and there’s a secret too.)</div>
+                            </div>
+                        </div>
                     </div>
                 </div>
-                <div class="repo-btn-wrapper">
-                    <a href="https://github.com/ahaarij/miniRT" class="repo-btn" target="_blank">See Repository</a>
+
+                <a class="scrollHint" href="#about" onclick="navigateTo('about')" aria-label="Scroll to About">
+                    <span class="scrollHint__text">Scroll</span>
+                    <span class="scrollHint__line"></span>
+                </a>
+            </section>
+
+            <section id="about" class="section">
+                <div class="container">
+                    <div class="sectionHead" data-reveal>
+                        <h2 class="sectionHead__title">About</h2>
+                        <p class="sectionHead__subtitle">
+                            I’m a builder-first developer: I like getting close to the metal, then polishing the product until it feels
+                            effortless.
+                        </p>
+                    </div>
+
+                    <div class="aboutGrid">
+                        <div class="aboutCard" data-reveal>
+                            <h3 class="aboutCard__title">What I’m great at</h3>
+                            <p class="aboutCard__text">
+                                Owning messy problems end-to-end: clarifying what matters, designing an approach, shipping a clean
+                                implementation, and iterating with feedback. I’m strongest when correctness and performance matter
+                                (C/C++, POSIX, memory, concurrency), but I care equally about the surface area — UI clarity, developer
+                                ergonomics, and documentation. You’ll get someone who debugs calmly, communicates early, and improves the
+                                system instead of patching symptoms.
+                            </p>
+                            <div class="stats">
+                                <div class="stat">
+                                    <div class="stat__num">3+</div>
+                                    <div class="stat__label">languages used daily</div>
+                                </div>
+                                <div class="stat">
+                                    <div class="stat__num">42</div>
+                                    <div class="stat__label">cursus projects shipped</div>
+                                </div>
+                                <div class="stat">
+                                    <div class="stat__num">∞</div>
+                                    <div class="stat__label">curiosity</div>
+                                </div>
+                            </div>
+
+							<div class="aboutFill" aria-label="Working style">
+								<div class="aboutFill__title">Working style</div>
+								<ul class="aboutFill__list">
+									<li>Small, solid iterations with clean commits and clear tradeoffs.</li>
+									<li>Comfortable in debugging mode: profiling, logs, repros, and root-cause fixes.</li>
+									<li>High standards on interfaces: readable code, predictable behavior, and good docs.</li>
+								</ul>
+							</div>
+                        </div>
+
+                        <div class="aboutCard aboutCard--tabs" data-reveal>
+                            <div class="tab-titles" role="tablist" aria-label="About tabs">
+                                <button class="tab-links active-link" role="tab" onclick="opentab('skills', this)">Skills</button>
+                                <button class="tab-links" role="tab" onclick="opentab('experience', this)">Experience</button>
+                                <button class="tab-links" role="tab" onclick="opentab('education', this)">Education</button>
+                            </div>
+
+                            <div class="tab-contents active-tab" id="skills" role="tabpanel">
+                                <ul class="pillList">
+                                    <li><span>Systems</span><br />C / C++ / POSIX; processes; signals; file descriptors; memory and performance.</li>
+                                    <li><span>Graphics</span><br />Linear algebra; 3D transforms; camera space; lighting and shadows; building render pipelines from scratch.</li>
+                                    <li><span>Networking</span><br />Sockets; non-blocking I/O; IRC (RFC 1459); multiplexing with <code>poll</code>.</li>
+                                    <li><span>DevOps</span><br />Docker; Docker Compose; Nginx TLS/SSL; volumes; networks; deployment automation.</li>
+                                    <li><span>Web</span><br />Responsive UI; vanilla JavaScript; API integration; performance and accessibility; shipping-focused freelance work.</li>
+                                </ul>
+                            </div>
+                            <div class="tab-contents" id="experience" role="tabpanel">
+                                <ul class="pillList">
+                                    <li><span>Oct 2024 — Present</span><br />Freelance Full‑Stack Developer — e‑commerce + portfolio sites.</li>
+                                    <li><span>Dec 2023</span><br />Lead Developer — Endless Game Jam (2nd place + “Best Visuals”).</li>
+                                    <li><span>WorldSkills Asia 2023</span><br />Event Host (Mental LTD) — Dubai Police activation.</li>
+                                </ul>
+                            </div>
+                            <div class="tab-contents" id="education" role="tabpanel">
+                                <ul class="pillList">
+                                    <li><span>Oct 2023 — Present</span><br />Software Development — 42 Abu Dhabi.</li>
+                                    <li><span>Feb 2022</span><br />GEMS Our Own Indian School — Mass Media (Dubai).</li>
+                                </ul>
+                            </div>
+
+                        </div>
+                    </div>
                 </div>
-            </div>
+            </section>
 
-            <div class="project">
-                <h2>Minishell</h2>
-                <p>A minimal Bash-like shell built in C, supporting pipes, heredocs, file redirection, and runtime command history. It includes built-in commands, variable handling, and a custom parser using a priority queue.</p>
-                <div class="minishell-img-row">
-                    <div class= "minishell-img-1">
-                        <img src="images/minishell_output.png" alt="Minishell Output"/>
-                        <div class="minishell-label">Minishell Output</div>
+            <section id="portfolio" class="section">
+                <div class="container">
+                    <div class="sectionHead" data-reveal>
+                        <h2 class="sectionHead__title">Selected Work</h2>
+                        <p class="sectionHead__subtitle">
+                            A few highlights with what I built, how I built it, and why it matters.
+                        </p>
                     </div>
-                    <div class = "minishell-img-2">
-                        <img src="images/minishell_diagram.png" alt="Minishell Core Concept"/>
-                        <div class="minishell-label">Minishell's Core Concept</div>
+
+                    <div class="caseGrid">
+                        <article class="caseCard" data-reveal>
+                            <div class="caseCard__head">
+                                <div>
+                                    <h3 class="caseCard__title">ft_irc — IRC Server (C++98)</h3>
+                                    <p class="caseCard__meta">Networking · Systems programming · 3-person team</p>
+                                </div>
+                                <div class="tagRow" aria-label="Tech tags">
+                                    <span class="tag">C++98</span>
+                                    <span class="tag">TCP/IP</span>
+                                    <span class="tag">poll()</span>
+                                    <span class="tag">RFC 1459</span>
+                                </div>
+                            </div>
+                            <p class="caseCard__desc">
+                                Co-developed a functional IRC server supporting multiple concurrent clients with non-blocking I/O for
+                                real-time chat.
+                            </p>
+                            <ul class="caseCard__highlights">
+                                <li>Socket architecture with multiplexed event loop</li>
+                                <li>Protocol-aware parsing + robust connection handling</li>
+                                <li>Focus on correctness, latency, and clean state management</li>
+                            </ul>
+                            <div class="caseCard__actions">
+                                <a class="btn btn--ghost btn--sm" href="https://github.com/ahaarij/ft_irc" target="_blank" rel="noreferrer">Repo</a>
+                                <a class="btn btn--primary btn--sm" href="#projects" data-view="projects">More work</a>
+                            </div>
+                        </article>
+
+                        <article class="caseCard" data-reveal>
+                            <div class="caseCard__head">
+                                <div>
+                                    <h3 class="caseCard__title">Inception — Containerized Infra</h3>
+                                    <p class="caseCard__meta">DevOps · Systems · Secure deployment</p>
+                                </div>
+                                <div class="tagRow" aria-label="Tech tags">
+                                    <span class="tag">Docker</span>
+                                    <span class="tag">Compose</span>
+                                    <span class="tag">Nginx TLS</span>
+                                    <span class="tag">MariaDB</span>
+                                </div>
+                            </div>
+                            <p class="caseCard__desc">
+                                Designed and deployed a multi-container stack: Nginx (TLS), WordPress (PHP-FPM), and MariaDB with
+                                networks, volumes, and automation.
+                            </p>
+                            <ul class="caseCard__highlights">
+                                <li>Secure networking + persistent storage via volumes</li>
+                                <li>Reproducible orchestration with Docker Compose</li>
+                                <li>Operational mindset: configs, hardening, deploy flow</li>
+                            </ul>
+                            <div class="caseCard__actions">
+                                <a class="btn btn--ghost btn--sm" href="https://github.com/ahaarij/Inception" target="_blank" rel="noreferrer">Repo</a>
+                                <a class="btn btn--primary btn--sm" href="#projects" data-view="projects">More work</a>
+                            </div>
+                        </article>
+
+                        <article class="caseCard" data-reveal>
+                            <div class="caseCard__head">
+                                <div>
+                                    <h3 class="caseCard__title">miniRT — Ray Tracer in C</h3>
+                                    <p class="caseCard__meta">Graphics · Linear algebra · Performance-focused C</p>
+                                </div>
+                                <div class="tagRow" aria-label="Tech tags">
+                                    <span class="tag">C</span>
+                                    <span class="tag">Phong</span>
+                                    <span class="tag">Shadows</span>
+                                    <span class="tag">MiniLibX</span>
+                                </div>
+                            </div>
+                            <p class="caseCard__desc">
+                                Built a ray tracing engine from scratch: intersections, lighting, shadows, and scene parsing to render
+                                realistic 3D images without external graphics libraries.
+                            </p>
+                            <ul class="caseCard__highlights">
+                                <li>Ray-object intersections + camera transforms</li>
+                                <li>Scene parsing + stable rendering pipeline</li>
+                                <li>Attention to correctness and visual quality</li>
+                            </ul>
+                            <div class="caseCard__actions">
+                                <a class="btn btn--ghost btn--sm" href="https://github.com/ahaarij/miniRT" target="_blank" rel="noreferrer">
+                                    Repo
+                                </a>
+                                <a class="btn btn--primary btn--sm" href="#projects" data-view="projects">More work</a>
+                            </div>
+                        </article>
+
+                        <article class="caseCard" data-reveal>
+                            <div class="caseCard__head">
+                                <div>
+                                    <h3 class="caseCard__title">Minishell — Unix Shell</h3>
+                                    <p class="caseCard__meta">Operating systems · Parsing · Process control</p>
+                                </div>
+                                <div class="tagRow" aria-label="Tech tags">
+                                    <span class="tag">C</span>
+                                    <span class="tag">fork/execve</span>
+                                    <span class="tag">Pipes</span>
+                                    <span class="tag">Signals</span>
+                                </div>
+                            </div>
+                            <p class="caseCard__desc">
+                                Implemented a Bash-like shell: command parsing, pipelines, redirections, heredocs, built-ins, and env
+                                handling with careful memory management.
+                            </p>
+                            <ul class="caseCard__highlights">
+                                <li>Lexer/parser-driven execution model</li>
+                                <li>File descriptor discipline and error handling</li>
+                                <li>Valgrind-first mindset to avoid leaks</li>
+                            </ul>
+                            <div class="caseCard__actions">
+                                <a
+                                    class="btn btn--ghost btn--sm"
+                                    href="https://github.com/ahaarij/minishell"
+                                    target="_blank"
+                                    rel="noreferrer"
+                                >
+                                    Repo
+                                </a>
+                                <a class="btn btn--primary btn--sm" href="#projects" data-view="projects">More work</a>
+                            </div>
+                        </article>
+
+                        <article class="caseCard caseCard--wide" data-reveal>
+                            <div class="caseCard__head">
+                                <div>
+                                    <h3 class="caseCard__title">Endless Game Jam — “Best Visuals”</h3>
+                                    <p class="caseCard__meta">Lead developer · Rapid prototyping · UX + audio</p>
+                                </div>
+                                <div class="tagRow" aria-label="Tech tags">
+                                    <span class="tag">Game Jam</span>
+                                    <span class="tag">Team lead</span>
+                                    <span class="tag">Visual polish</span>
+                                    <span class="tag">Audio design</span>
+                                </div>
+                            </div>
+                            <div class="caseCard__wideGrid">
+                                <div>
+                                    <p class="caseCard__desc">
+                                        Led development in a competitive jam, placing 2nd and winning “Best Visuals”. I also composed
+                                        original soundtracks in a follow-up jam — praised for immersive integration.
+                                    </p>
+                                    <ul class="caseCard__highlights">
+                                        <li>Built under pressure with clean execution and teamwork</li>
+                                        <li>Focused on “feel”: feedback loops, visual clarity, moment-to-moment polish</li>
+                                        <li>Creative + technical blend (code + sound)</li>
+                                    </ul>
+                                    <div class="caseCard__actions">
+                                        <a
+                                            class="btn btn--primary btn--sm"
+                                            href="https://mr-galt.itch.io/deep-descent"
+                                            target="_blank"
+                                            rel="noreferrer"
+                                        >
+                                            Play
+                                        </a>
+                                        <a class="btn btn--ghost btn--sm" href="#projects" data-view="projects">More work</a>
+                                    </div>
+                                </div>
+                                <div class="caseCard__media" aria-hidden="true">
+                                    <img src="images/work-1.png" alt="" />
+                                </div>
+                            </div>
+                        </article>
                     </div>
-                    <div class = "minishell-img-3">
-                        <img src="images/minishell_code.png" alt="Minishell Code"/>
-                        <div class="minishell-label">Execution Code Snippet</div>
+
+                    <div class="center" data-reveal>
+                        <a class="btn btn--wide" href="https://www.github.com/ahaarij" target="_blank" rel="noreferrer">
+                            See more on GitHub
+                        </a>
                     </div>
                 </div>
-                <div class="repo-btn-wrapper">
-                    <a href="https://github.com/ahaarij/minishell" class="repo-btn" target="_blank">See Repository</a>
-                </div>
-            </div>
+            </section>
 
-            <div class="project">
-                <h2>Push Swap</h2>
-                <p>A stack-based sorting algorithm written in C. It uses radix sort to efficiently organize numbers with a limited set of operations, focusing on performance and algorithmic optimization.</p>
-                <div class="pushswap-img-row">
-                    <div class= "pushswap-img-1">
-                        <img src="images/before&after.png" alt="Before and After"/>
-                        <div class="pushswap-label">Before & After</div>
+            <section id="contact" class="section section--contact">
+                <div class="container">
+                    <div class="contactGrid">
+                        <div class="contactLeft" data-reveal>
+                            <h2 class="sectionHead__title">Let’s build something</h2>
+                            <p class="contactLead">
+                                If you’re hiring or want to collaborate, I reply fast.
+                            </p>
+                            <div class="contactInfo">
+                                <p><i class="fa-solid fa-envelope"></i> ahmedaarij05@gmail.com</p>
+                                <p><i class="fa-solid fa-phone"></i> +971503880691</p>
+                            </div>
+
+                            <div class="social-icons" aria-label="Social links">
+                                <a href="https://www.instagram.com/aarij.xo" target="_blank" rel="noreferrer" aria-label="Instagram">
+                                    <i class="fa-brands fa-instagram"></i>
+                                </a>
+                                <a href="https://www.github.com/ahaarij" target="_blank" rel="noreferrer" aria-label="GitHub">
+                                    <i class="fa-brands fa-github"></i>
+                                </a>
+                                <a
+                                    href="https://discord.com/users/:241854792375205889"
+                                    target="_blank"
+                                    rel="noreferrer"
+                                    aria-label="Discord"
+                                >
+                                    <i class="fa-brands fa-discord"></i>
+                                </a>
+                            </div>
+
+                                <a class="btn btn--primary" href="Ahmed%20Aarij%20CV-1.pdf" download>
+                                <i class="fa-solid fa-download"></i> Download Resume
+                            </a>
+                        </div>
+
+                        <div class="contactRight" data-reveal>
+                            <form class="contactForm" name="submit-to-google-sheet" autocomplete="on">
+                                <label class="sr-only" for="name">Name</label>
+                                <input id="name" type="text" name="Name" placeholder="Your name" required />
+
+                                <label class="sr-only" for="email">Email</label>
+                                <input id="email" type="email" name="Email" placeholder="Your email" required />
+
+                                <label class="sr-only" for="message">Message</label>
+                                <textarea id="message" name="Message" rows="6" placeholder="What are we building?"></textarea>
+
+                                <button type="submit" class="btn btn--primary btn--submit">Send message</button>
+                                <span id="msg" class="formMsg" aria-live="polite"></span>
+                            </form>
+                        </div>
                     </div>
-                    <div class = "pushswap-img-2">
-                        <img src="images/sorting.gif" alt="Sorting Animation"/>
-                        <div class="pushswap-label">Sorting Animation</div>
+                </div>
+            </section>
+
+            <footer class="footer">
+                <div class="container footer__inner">
+                    <span>© <span id="year"></span> Ahmed Aarij</span>
+                    <a class="footer__link" href="#top" onclick="navigateTo('header')">Back to top</a>
+                </div>
+            </footer>
+        </main>
+
+        <!-- View: Projects -->
+        <main id="view-projects" class="view" style="display: none" aria-hidden="true">
+            <section class="subhero">
+                <div class="container subhero__inner">
+                    <a class="back-btn" onclick="navigateTo('home')">
+                        <i class="fa-solid fa-arrow-left"></i> Back
+                    </a>
+                    <h1 class="subhero__title">42 Abu Dhabi <span class="text-gradient">Projects</span></h1>
+                    <p class="subhero__subtitle">
+                        Some of the most rewarding low-level projects I’ve completed at 42 — built in C from scratch.
+                    </p>
+                </div>
+            </section>
+
+            <section class="section">
+                <div class="container">
+                    <div class="projectCard" data-reveal>
+                        <div class="projectCard__head">
+                            <h2>MiniRT</h2>
+                            <a class="repo-btn" href="https://github.com/ahaarij/miniRT" target="_blank" rel="noreferrer">
+                                See Repository
+                            </a>
+                        </div>
+                        <p>
+                            A ray tracer written in C using MinilibX. Renders real-time 3D scenes with lighting, shadows, and texture
+                            bump mapping. Includes camera controls and custom scene files.
+                        </p>
+                        <div class="mediaRow">
+                            <figure>
+                                <img src="images/minirt_scene.png" alt="Basic MiniRT Scene" />
+                                <figcaption>Basic scene</figcaption>
+                            </figure>
+                            <figure>
+                                <img src="images/minirt_demo.gif" alt="MiniRT Demo" />
+                                <figcaption>Live demo</figcaption>
+                            </figure>
+                            <figure>
+                                <img src="images/minirt_compare.png" alt="MiniRT Texture Comparison" />
+                                <figcaption>Normal vs bump map</figcaption>
+                            </figure>
+                        </div>
                     </div>
-                    <div class = "pushswap-img-3">
-                        <img src="images/graph.png" alt="Graph"/>
-                        <div class="pushswap-label">Performance Graph</div>
+
+                    <div class="projectCard" data-reveal>
+                        <div class="projectCard__head">
+                            <h2>Minishell</h2>
+                            <a class="repo-btn" href="https://github.com/ahaarij/minishell" target="_blank" rel="noreferrer">
+                                See Repository
+                            </a>
+                        </div>
+                        <p>
+                            A minimal Bash-like shell in C: pipes, heredocs, redirection, history, built-ins, env handling, and a custom
+                            parser.
+                        </p>
+                        <div class="mediaRow">
+                            <figure>
+                                <img src="images/minishell_output.png" alt="Minishell Output" />
+                                <figcaption>Output</figcaption>
+                            </figure>
+                            <figure>
+                                <img src="images/minishell_diagram.png" alt="Minishell Core Concept" />
+                                <figcaption>Core concept</figcaption>
+                            </figure>
+                            <figure>
+                                <img src="images/minishell_code.png" alt="Minishell Code" />
+                                <figcaption>Execution snippet</figcaption>
+                            </figure>
+                        </div>
+                    </div>
+
+                    <div class="projectCard" data-reveal>
+                        <div class="projectCard__head">
+                            <h2>Push Swap</h2>
+                            <a class="repo-btn" href="https://github.com/ahaarij/push_swap" target="_blank" rel="noreferrer">
+                                See Repository
+                            </a>
+                        </div>
+                        <p>
+                            A stack-based sorting algorithm in C. Uses radix sorting and careful operation selection to optimize
+                            performance.
+                        </p>
+                        <div class="mediaRow">
+                            <figure>
+                                <img src="images/before&after.png" alt="Before and After" />
+                                <figcaption>Before & after</figcaption>
+                            </figure>
+                            <figure>
+                                <img src="images/sorting.gif" alt="Sorting Animation" />
+                                <figcaption>Sorting animation</figcaption>
+                            </figure>
+                            <figure>
+                                <img src="images/graph.png" alt="Performance Graph" />
+                                <figcaption>Performance</figcaption>
+                            </figure>
+                        </div>
+                    </div>
+
+                    <div class="center" data-reveal>
+                        <a class="btn btn--wide" href="https://www.github.com/ahaarij" target="_blank" rel="noreferrer">
+                            Browse all repositories
+                        </a>
                     </div>
                 </div>
-                <div class="repo-btn-wrapper">
-                    <a href="https://github.com/ahaarij/push_swap" class="repo-btn" target="_blank">See Repository</a>
+            </section>
+
+            <footer class="footer">
+                <div class="container footer__inner">
+                    <span>© <span id="year"></span> Ahmed Aarij</span>
+                    <a class="footer__link" onclick="navigateTo('home')">Home</a>
                 </div>
-            </div>
+            </footer>
+        </main>
 
-        </div>
-    </div>
-    
-    <div id="contact">
-        <div class="copyright">
-            <p>Copyright © Aarij <i class="fa-solid fa-heart"></i></p>
-        </div>
-    </div>
-</div>
+        <!-- View: Hackathons -->
+        <main id="view-hackathons" class="view" style="display: none" aria-hidden="true">
+            <section class="subhero">
+                <div class="container subhero__inner">
+                    <a class="back-btn" onclick="navigateTo('home')">
+                        <i class="fa-solid fa-arrow-left"></i> Back
+                    </a>
+                    <h1 class="subhero__title">Hackathons <span class="text-gradient">& Experiments</span></h1>
+                    <p class="subhero__subtitle">
+                        Rapid prototypes, teamwork, and bold ideas. I’m expanding this section — for now, the best highlight is the
+                        GameJam winner on the home page.
+                    </p>
+                </div>
+            </section>
 
-<!-- View: Hackathons -->
-<div id="view-hackathons" class="view" style="display: none;">
-    <div id="header">
-        <div class="container">
-            <nav>
-                <a onclick="navigateTo('home')" class="back-btn"><i class="fa-solid fa-arrow-left"></i> Back to Home </a>
-            </nav>
-            <div class="header-text">
-                <h1>Hackathons</h1>
-                <h2>Coming soon...</h2>
-            </div>
-        </div>
-    </div>
-</div>
+            <section class="section">
+                <div class="container">
+                    <div class="callout" data-reveal>
+                        <h2>Want this section to pop?</h2>
+                        <p>
+                            Send me 2–3 hackathon links or repos and I’ll turn them into clean case-study cards with screenshots,
+                            roles, and outcomes.
+                        </p>
+                        <a class="btn btn--primary" onclick="navigateTo('contact')">Message me</a>
+                    </div>
+                </div>
+            </section>
 
-<script>
-    function navigateTo(viewId, updateHistory = true) {
-        const sectionMap = {
-            'header': 'home',
-            'about': 'home',
-            'portfolio': 'home',
-            'contact': 'home'
-        };
+            <footer class="footer">
+                <div class="container footer__inner">
+                    <span>© <span id="year"></span> Ahmed Aarij</span>
+                    <a class="footer__link" onclick="navigateTo('home')">Home</a>
+                </div>
+            </footer>
+        </main>
 
-        const targetViewId = sectionMap[viewId] || viewId;
-        
-        document.querySelectorAll('.view').forEach(view => {
-            view.style.display = 'none';
-        });
-        
-        const targetView = document.getElementById('view-' + targetViewId);
-        if (targetView) {
-            targetView.style.display = 'block';
-            
-            if (sectionMap[viewId]) {
-                const section = document.getElementById(viewId);
-                if (section) {
-                    section.scrollIntoView({ behavior: 'smooth' });
-                }
-            } else {
-                window.scrollTo(0, 0);
-            }
-            
-            // Update URL hash
-            if (updateHistory) {
-                history.pushState(null, null, '#' + viewId);
-            }
-        }
-    }
-
-    window.addEventListener('popstate', () => {
-        const hash = window.location.hash.replace('#', '') || 'home';
-        navigateTo(hash, false);
-    });
-
-    window.addEventListener('DOMContentLoaded', () => {
-        const hash = window.location.hash.replace('#', '') || 'home';
-        navigateTo(hash, false);
-    });
-</script>
-
-
-<!-- ---------script--------- -->
-
-
-
-<script>
-
-	var tablinks = document.getElementsByClassName("tab-links");
-	var tabcontents = document.getElementsByClassName("tab-contents");
-
-	function opentab(tabname)
-	{
-		for(tablink of tablinks)
-		{
-			tablink.classList.remove("active-link");
-		}
-		for(tabcontent of tabcontents)
-		{
-			tabcontent.classList.remove("active-tab");
-		}
-		event.currentTarget.classList.add("active-link");
-		document.getElementById(tabname).classList.add("active-tab");
-	}
-
-
-</script>
-
-<script>
-
-	var sidemen = document.getElementById('sidemenu');
-
-	function openmenu(){
-		sidemen.style.right = "0";
-	}
-	function closemenu(){
-		sidemen.style.right = "-200px";
-	}
-
-</script>
-
-  
-<script>
-	const scriptURL = 'https://script.google.com/macros/s/AKfycbyN5lGxxbcLqlJTQf7wbkQ1dqCUlu_GDrtemH8jCBDcmiV_lkHWjWqGUjxI1SfiaF3e/exec'
-	const form = document.forms['submit-to-google-sheet']
-	const msg = document.getElementById("msg")
-  
-	form.addEventListener('submit', e => {
-	  e.preventDefault()
-	  fetch(scriptURL, { method: 'POST', body: new FormData(form)})
-		.then(response => {
-			msg.innerHTML = "Message Sent Successfully!"
-			setTimeout(function(){
-				msg.innerHTML = ""
-			}, 5000)
-			form.reset();
-		})
-		.catch(error => console.error('Error!', error.message))
-	})
-</script>
-
-<script src="secret.js"></script>
-
-</body>
+        <script src="main.js" defer></script>
+        <script src="secret.js" defer></script>
+    </body>
 </html>
