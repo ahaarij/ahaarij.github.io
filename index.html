@@ -1,0 +1,89 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<title>Aarij's Portfolio</title>
+		<meta name="description" content="Extracted starry background (grid + particles)." />
+		<link href="https://api.fontshare.com/v2/css?f[]=satoshi@300,700&display=swap" rel="stylesheet">
+		<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap" rel="stylesheet">
+		<link rel="stylesheet" href="style.css" />
+		<script type="module" src="main.js"></script>
+		<script defer src="secret.js"></script>
+	</head>
+	<body>
+		<header class="site-header">
+			<div class="site-name">Ahmed Aarij</div>
+			<nav class="site-nav" aria-label="Primary">
+				<button class="nav-btn" type="button">Projects</button>
+				<button class="nav-btn" type="button">Contact Me</button>
+			</nav>
+		</header>
+
+		<main class="site-content">
+			<h1 class="site-heading">ABOUT</h1>
+			<div class="site-about">
+				<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque feugiat feugiat neque nec convallis. Donec egestas ante mi, ac eleifend sapien gravida a. Proin gravida sapien quis est gravida, quis ullamcorper erat vehicula. Curabitur eu fringilla libero. Nam et neque cursus sapien convallis consectetur non quis quam. Proin accumsan purus eget dignissim lobortis. Donec lacinia placerat erat, vitae iaculis dui placerat vel.</p>
+				<p>Mauris id fermentum lacus. Quisque in faucibus velit. In turpis massa, convallis quis pretium varius, rutrum non erat. Praesent a cursus nunc. Quisque ac sollicitudin ex. Nunc non mauris sed sapien malesuada condimentum id non mi. Mauris tincidunt.</p>
+			</div>
+		</main>
+
+		<section class="site-panels" aria-label="Highlights">
+			<div class="panel">
+				<div class="panel-title">Technical Skills</div>
+				<div class="panel-details" aria-label="Technical skills summary">
+					<ul class="panel-list">
+						<li><strong>Web Development:</strong> REST APIs, WebSockets</li>
+						<li><strong>Backend Development:</strong> API Design, JWT Authentication</li>
+						<li><strong>Databases:</strong> SQL (PostgreSQL, MySQL)</li>
+						<li><strong>Core CS:</strong> Data Structures &amp; Algorithms, Systems Programming (low-level), Concurrency / Multithreading, Performance Optimization</li>
+						<li><strong>AI &amp; Graphics:</strong> Computer Vision, Large Language Models (LLMs), Ray Tracing &amp; 3D Rendering</li>
+					</ul>
+				</div>
+			</div>
+			<div class="panel">
+				<div class="panel-title">Education</div>
+				<div class="panel-details" aria-label="Education">
+					<div class="panel-row">
+						<span><strong>42 Abu Dhabi University</strong></span>
+						<span class="panel-right">Nov 2023 - May 2027</span>
+					</div>
+					<div class="panel-subline">Bachelors in Software Development and AI Applications</div>
+					<ul class="panel-list panel-list--tight">
+						<li>GPA: 3.89/4.0 <em>(Equivalent based on 30+ validated projects)</em></li>
+					</ul>
+					<div class="panel-row panel-row--spaced">
+						<span><strong>Our Own Indian School</strong></span>
+						<span class="panel-right">Jul 2022</span>
+					</div>
+					<ul class="panel-list panel-list--tight panel-list--after">
+						<li>12th · Mass Media</li>
+					</ul>
+				</div>
+			</div>
+			<div class="panel">
+				<div class="panel-title">Software Skills</div>
+				<div class="panel-details" aria-label="Software skills">
+					<ul class="panel-list">
+						<li><strong>Languages:</strong> C/C++, Python, JavaScript/TypeScript, Bash</li>
+						<li><strong>Frameworks &amp; Libraries:</strong> React, Node.js, FastAPI, OpenCV</li>
+						<li><strong>Dev Tools:</strong> Git/GitHub, Docker, Postman, VS Code, Linux CLI</li>
+						<li><strong>Databases:</strong> PostgreSQL, MySQL, SQLite</li>
+						<li><strong>Testing &amp; Quality:</strong> pytest, Jest, basic linting/formatting (ESLint/Prettier)</li>
+					</ul>
+				</div>
+			</div>
+		</section>
+		<div class="cyber-grid" aria-hidden="true"></div>
+		<div class="page-overlay" aria-hidden="true"></div>
+
+		<div class="pullSwitch" id="pull-switch" role="switch" aria-label="Toggle light/dark mode" aria-checked="false">
+			<div class="pullSwitch__swing" aria-hidden="true">
+				<div class="pullSwitch__drag">
+					<div class="pullSwitch__cord"></div>
+					<button class="pullSwitch__handle" id="pull-handle" type="button" aria-label="Pull to toggle theme"></button>
+				</div>
+			</div>
+		</div>
+	</body>
+</html>
