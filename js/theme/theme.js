@@ -1,11 +1,22 @@
 import { prefersReducedMotion } from '../utils/media.js';
 import { canUseViewTransitions } from '../utils/dom.js';
 
+export function stripThemeParamFromUrl() {
+	try {
+		const url = new URL(window.location.href);
+		if (!url.searchParams.has('theme')) return;
+		url.searchParams.delete('theme');
+		history.replaceState(null, '', `${url.pathname}${url.search}${url.hash}`);
+	} catch {
+	}
+}
+
 export function resolveThemeFromUrl() {
 	try {
 		const t = new URLSearchParams(window.location.search).get('theme');
 		if (!t) return null;
 		const v = String(t).trim().toLowerCase();
+		stripThemeParamFromUrl();
 		if (v === 'light' || v === 'dark') return v;
 		return null;
 	} catch {
@@ -40,12 +51,6 @@ export function setTheme(next) {
 	}
 	try {
 		localStorage.setItem('theme', v);
-	} catch {
-	}
-	try {
-		const url = new URL(window.location.href);
-		url.searchParams.set('theme', v);
-		history.replaceState(null, '', url.toString());
 	} catch {
 	}
 }
