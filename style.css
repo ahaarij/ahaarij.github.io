@@ -82,6 +82,11 @@ body {
 	color: var(--site-name-color);
 }
 
+button.site-name {
+	background: transparent;
+	cursor: pointer;
+}
+
 .site-nav {
 	display: flex;
 	align-items: flex-start;
@@ -112,6 +117,10 @@ body {
 	z-index: 5;
 	overflow: auto;
 	min-height: 0;
+}
+
+.site-content--full {
+	bottom: var(--panels-bottom);
 }
 
 .site-heading {
