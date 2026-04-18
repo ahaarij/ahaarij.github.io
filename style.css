@@ -644,11 +644,13 @@ body.light-mode .pullSwitch__handle {
 	.pullSwitch { right: 52px; top: 8px; }
 }
 
-/* Mobile / small screens */
-@media (max-width: 760px) {
+/* Mobile / small screens (and touch devices) */
+@media (max-width: 760px), (pointer: coarse) {
 	body {
 		overflow-x: hidden;
-		overflow-y: auto;
+		overflow-y: scroll;
+		scrollbar-gutter: stable;
+		-webkit-overflow-scrolling: touch;
 	}
 
 	.site-header {
@@ -730,7 +732,7 @@ body.light-mode .pullSwitch__handle {
 	}
 
 	.project-card__slider {
-		height: 92px;
+		height: 120px;
 	}
 
 	.project-card__nda {
@@ -739,6 +741,10 @@ body.light-mode .pullSwitch__handle {
 	}
 
 	.project-card__img {
+		width: 132px;
+	}
+
+	.project-card__figure {
 		width: 132px;
 	}
 
