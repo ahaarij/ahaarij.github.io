@@ -268,18 +268,37 @@ button.site-name {
 	display: flex;
 	gap: 12px;
 	height: 100%;
-	align-items: center;
+	align-items: flex-start;
 	width: max-content;
 	will-change: transform;
 	animation: project-card-scroll var(--project-scroll-duration, 22s) linear infinite;
 }
 
-.project-card__img {
+.project-card__figure {
+	margin: 0;
 	height: 100%;
 	width: 170px;
 	flex: 0 0 auto;
+	display: flex;
+	flex-direction: column;
+	gap: 6px;
+}
+
+.project-card__img {
+	height: 92px;
+	width: 100%;
 	object-fit: cover;
 	border-radius: 10px;
+}
+
+.project-card__caption {
+	font-size: 12px;
+	line-height: 1.2;
+	text-align: center;
+	opacity: 0.85;
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
 }
 
 @keyframes project-card-scroll {
@@ -302,6 +321,7 @@ button.site-name {
 	color: var(--site-name-color);
 	cursor: pointer;
 	white-space: nowrap;
+	text-decoration: none;
 }
 
 .project-more:focus-visible {
